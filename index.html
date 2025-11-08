@@ -5,122 +5,258 @@
     <title>Receitas Para Bebês | Crescendo Saudável</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Guia ilustrado com 337 receitas práticas, testadas e seguras para a introdução alimentar do seu bebê. Black Novembro: aproveite a oferta.">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Variáveis de Cores para fácil manutenção */
+        :root {
+            --cor-primaria: #f4946a; /* Laranja da Header */
+            --cor-secundaria: #0455fa; /* Azul do CTA e Títulos */
+            --cor-hover: #023491; /* Azul Escuro (Hover) */
+            --cor-fundo: #f9f9f9; /* Fundo do Body */
+            --cor-container: #fff; /* Fundo do Container Principal */
+            --cor-persona: #fff6f0; /* Fundo da Persona */
+            --cor-beneficio: #f7faf2; /* Fundo dos Benefícios/FAQ */
+            --cor-garantia: #daead2; /* Fundo da Garantia */
+        }
+
         body {
-            font-family: 'Montserrat', Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f9f9f9;
+            background: var(--cor-fundo);
             color: #222;
+            line-height: 1.6; /* Melhor legibilidade */
         }
         header {
-            background: #f4946a;
+            background: var(--cor-primaria);
             text-align: center;
-            padding: 2.4em 1em 1.3em 1em;
+            padding: 2.5em 1em 1.5em 1em; /* Ajuste para melhor visual em mobile */
         }
         header img {
-            width: 95px;
+            width: 100px; /* Leve aumento no ícone */
             border-radius: 50%;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3); /* Destaque sutil */
         }
         header h1 {
-            font-size: 2.25em;
+            font-size: 2.5em; /* Aumento para destaque */
             margin: 0 0 16px;
             font-weight: 700;
             color: #fff;
+            line-height: 1.1;
         }
         header p {
             color: #fff;
-            font-size: 1.1em;
+            font-size: 1.2em; /* Maior destaque no subtítulo */
             margin: 0;
+            font-weight: 500;
         }
+
+        /* Estrutura Principal - Container */
         .container {
-            max-width: 930px;
+            max-width: 960px; /* Leve aumento para telas maiores */
             margin: 0 auto;
-            padding: 25px;
-            background: #fff;
-            box-shadow: 0 2px 11px rgba(0,0,0,0.07);
-            border-radius: 1em;
-            margin-top: -40px;
+            padding: 20px; /* Diminui um pouco o padding para mobile */
+            background: var(--cor-container);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-radius: 1.2em;
+            margin-top: -50px; /* Subida no container */
+            position: relative; /* Para garantir que fique acima da header */
         }
+        /* Ajuste do container para desktop */
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+                margin-top: -60px;
+            }
+        }
+        
+        /* Botão CTA (Call-to-Action) - ALTA CONVERSÃO */
         .cta {
-            display: inline-block;
-            margin: 18px 0;
-            padding: 16px 30px;
-            background: #0455fa;
+            display: block; /* Garante que o botão ocupe toda a largura em mobile */
+            width: 90%; /* Ajuste para 90% da largura em mobile */
+            max-width: 400px; /* Limite em telas maiores */
+            margin: 18px auto; /* Centraliza */
+            padding: 18px 30px;
+            background: var(--cor-secundaria);
             color: #fff;
             border-radius: 60px;
-            font-size: 1.18em;
+            font-size: 1.25em; /* Maior para conversão */
             font-weight: 700;
-            box-shadow: 0 4px 18px rgba(4,85,250,0.08);
+            box-shadow: 0 6px 20px rgba(4,85,250,0.3); /* Sombra mais visível */
             text-decoration: none;
-            transition: background 0.2s;
-            border:none;
+            transition: all 0.25s ease-in-out; /* Transição em todos os estados */
+            text-align: center;
+            border: none;
+            cursor: pointer;
         }
         .cta:hover {
-            background: #023491;
+            background: var(--cor-hover);
+            box-shadow: 0 8px 25px rgba(4,85,250,0.5);
+            transform: translateY(-2px); /* Efeito sutil de elevação no hover */
         }
+
+        /* Seção de Imagens - Grid Avançado */
         .img-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-            gap: 1em;
+            /* Mais flexível: 2 colunas em mobile e até 5 em desktop */
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+            gap: 12px; 
             margin: 30px 0;
         }
         .img-grid img {
             width: 100%;
-            height: 140px;
+            height: 120px; /* Altura um pouco menor para economizar espaço em mobile */
             object-fit: cover;
-            border-radius: 1em;
+            border-radius: 10px; 
+            transition: transform 0.3s;
         }
+        .img-grid img:hover {
+            transform: scale(1.03);
+        }
+
         h2 {
-            color: #0455fa;
+            color: var(--cor-secundaria);
             margin-top: 0;
-        }
-        section { margin: 34px 0; }
-        .personas { display: flex; gap:18px; flex-wrap:wrap; margin-bottom:1.5em;}
-        .persona {
-            background:#fff6f0;
-            border-radius:13px;
-            padding: 18px 18px 8px 18px;
-            flex:1 1 270px;
-            min-width: 240px;
-            box-shadow:0 1px 6px rgba(238,118,38,0.06);
-        }
-        .persona strong { color: #0455fa; }
-        .benefits,.faq,.testimonials { display: flex; flex-wrap:wrap; gap:24px;}
-        .benefit,.testimonial,.faqitem { flex:1 1 270px; background:#f7faf2; border-radius:10px;padding:18px;min-width:220px; }
-        .testimonial { font-style: italic; background:#fff;}
-        @media (max-width: 740px) {
-          .container, .benefits,.faq,.testimonials,.personas { flex-direction:column; gap:13px;}
-          .cta{width:100%;}
-        }
-        .guarantee {
-            background: #daead2;
-            color: #253c1e;
-            border-radius: 9px;
-            padding: 16px 22px;
+            font-size: 1.8em;
             text-align: center;
-            font-weight: 500;
-            margin: 38px 0;
+            margin-bottom: 1em;
         }
-        footer { background:#eee; color:#444; text-align:center; padding:18px 10px; font-size:0.98em; margin-top:30px;}
-        footer a { color: #0455fa; text-decoration: underline; margin: 0 7px; }
-        footer a:hover { color: #023491; }
+        section { margin: 40px 0; }
+        
+        /* Seção de Personas - FLEXBOX OTIMIZADO */
+        .personas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Centraliza itens */
+        }
+        .persona {
+            background: var(--cor-persona);
+            border-radius: 13px;
+            padding: 20px;
+            flex: 1 1 280px; /* Otimizado para 3 colunas em desktop */
+            min-width: 250px;
+            box-shadow: 0 2px 8px rgba(244, 148, 106, 0.1);
+        }
+        .persona strong { 
+            color: var(--cor-secundaria); 
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Benefícios, FAQ, Depoimentos - FLEXBOX OTIMIZADO */
+        .benefits, .faq, .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Centraliza itens */
+        }
+        .benefit, .testimonial, .faqitem { 
+            flex: 1 1 300px; /* Permite 2 ou 3 colunas dependendo do espaço */
+            background: var(--cor-beneficio); 
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 280px;
+        }
+        .testimonial { 
+            font-style: italic; 
+            background: var(--cor-container);
+            border: 1px solid #eee;
+        }
+        .testimonial strong {
+             font-style: normal;
+             color: #444;
+             display: block;
+             margin-top: 10px;
+        }
+
+        /* Garantia - Destaque de Conversão */
+        .guarantee {
+            background: var(--cor-garantia);
+            color: #253c1e;
+            border-radius: 10px;
+            padding: 20px 25px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin: 40px 0;
+            border: 2px solid #c2e2af; /* Borda sutil de destaque */
+        }
+
+        /* Footer */
+        footer { 
+            background: #eee; 
+            color: #444; 
+            text-align: center; 
+            padding: 20px 10px; 
+            font-size: 0.9em; 
+            margin-top: 40px;
+            line-height: 1.8;
+        }
+        footer a { 
+            color: var(--cor-secundaria); 
+            text-decoration: none;
+            margin: 0 7px; 
+            font-weight: 500;
+        }
+        footer a:hover { 
+            color: var(--cor-hover);
+            text-decoration: underline;
+        }
+
+        /* Media Queries para Telas Maiores (Desktop) */
+        @media (min-width: 1024px) {
+            header h1 {
+                font-size: 3em;
+            }
+            .persona {
+                flex-basis: 30%; /* Força 3 colunas bem definidas */
+                min-width: unset;
+            }
+        }
+        
+        /* Media Queries para Mobile (ajuste fino) */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.9em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .container {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .img-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Mais compacto em telas muito pequenas */
+            }
+            .persona, .benefit, .testimonial, .faqitem {
+                min-width: 100%; /* Ocupa 100% da largura em telas estreitas */
+                flex-basis: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="1000051611.jpeg" alt="Papinha natural para bebês">
+        <img src="1000051611.jpeg" alt="Papinha natural para bebês, guia ilustrado">
         <h1>337 Receitas Para Bebês — Black Novembro</h1>
         <p>Guia ilustrado, aprovado por especialistas, com receitas para cada fase do seu bebê.<br>Oferta exclusiva por tempo limitado!</p>
         <a href="https://go.hotmart.com/P102760337U?redirectionUrl=https%3A%2F%2Fcrescendosaudavel.com.br%2Freceitas-para-bebes-black-novembro" class="cta">Quero Garantir Meu Guia Agora</a>
     </header>
     <main class="container">
+        
         <section>
             <div class="img-grid">
                 <img src="1000051613.jpeg" alt="Papinhas variadas e saudáveis">
+                <img src="1000051610.jpeg" alt="Comida de bebê natural">
                 <img src="1000051612.jpeg" alt="Papinhas coloridas no potinho">
+                <img src="1000051614.jpeg" alt="Bebê experimentando molho saudável">
                 <img src="1000051615.jpeg" alt="Receitas práticas para pais ocupados">
             </div>
         </section>
@@ -146,10 +282,18 @@
         <section>
             <h2>Benefícios para sua rotina</h2>
             <div class="benefits">
-                <div class="benefit"><strong>Receitas 100% seguras</strong><br>para cada etapa da introdução alimentar, criadas e aprovadas por especialistas com dicas reais sobre textura, nutrientes e prevenção de alergias.</div>
-                <div class="benefit"><strong>Praticidade e variedade</strong><br>tudo organizado por faixa etária e objetivo, com cardápios prontos, índice clicável e orientações para poupar tempo.</div>
-                <div class="benefit"><strong>Exclusivo Black Novembro</strong><br>bônus: cardápios mensais, lista de compras, grupo de suporte online e garantia de satisfação total.</div>
-                <div class="benefit"><strong>Aprovação real</strong><br>depoimentos de mães, pais e profissionais, mostrando transformação na hora da alimentação e aceitação pelos bebês.</div>
+                <div class="benefit">
+                    <strong>Receitas 100% seguras</strong><br>para cada etapa da introdução alimentar, criadas e aprovadas por especialistas com dicas reais sobre textura, nutrientes e prevenção de alergias.
+                </div>
+                <div class="benefit">
+                    <strong>Praticidade e variedade</strong><br>tudo organizado por faixa etária e objetivo, com cardápios prontos, índice clicável e orientações para poupar tempo.
+                </div>
+                <div class="benefit">
+                    <strong>Exclusivo Black Novembro</strong><br>bônus: cardápios mensais, lista de compras, grupo de suporte online e garantia de satisfação total.
+                </div>
+                <div class="benefit">
+                    <strong>Aprovação real</strong><br>depoimentos de mães, pais e profissionais, mostrando transformação na hora da alimentação e aceitação pelos bebês.
+                </div>
             </div>
         </section>
 
@@ -157,13 +301,16 @@
             <h2>Depoimentos de Quem Comprou</h2>
             <div class="testimonials">
                 <div class="testimonial">
-                    “Comprei ainda insegura, mas as receitas são mesmo práticas e o índice ajudou MUITO! Meu bebê agora aceitou cenoura e batata doce, que antes nem chegava perto.” — Ana Carolina (mãe de 1ª viagem)
+                    “Comprei ainda insegura, mas as receitas são mesmo práticas e o índice ajudou MUITO! Meu bebê agora aceitou cenoura e batata doce, que antes nem chegava perto.” 
+                    <strong>— Ana Carolina (mãe de 1ª viagem)</strong>
                 </div>
                 <div class="testimonial">
-                    “Me salvou! Trabalho e cuido da minha filha. Segui o cardápio e as orientações, sou pai solo e agora consigo variar muito melhor sem perder tempo.” — Ricardo (pai solo, MG)
+                    “Me salvou! Trabalho e cuido da minha filha. Segui o cardápio e as orientações, sou pai solo e agora consigo variar muito melhor sem perder tempo.” 
+                    <strong>— Ricardo (pai solo, MG)</strong>
                 </div>
                 <div class="testimonial">
-                    “Uso as receitas na creche e recomendo para as famílias, o material é lindo e completo, já rendeu elogio das mães.” — Laura (nutricionista, RS)
+                    “Uso as receitas na creche e recomendo para as famílias, o material é lindo e completo, já rendeu elogio das mães.” 
+                    <strong>— Laura (nutricionista, RS)</strong>
                 </div>
             </div>
         </section>
@@ -171,10 +318,18 @@
         <section>
             <h2>Perguntas Frequentes</h2>
             <div class="faq">
-                <div class="faqitem"><strong>Serve para bebês de todas as idades?</strong><br>Sim — dividido por fases (6-12 meses, 12-24 meses, +24 meses), fácil adaptar para crianças e até para família inteira.</div>
-                <div class="faqitem"><strong>Funciona mesmo se não souber cozinhar?</strong><br>Sim — receitas e lista de compras fáceis, ingredientes simples, preparo direto ao ponto.</div>
-                <div class="faqitem"><strong>Tem suporte?</strong><br>Sim — você entra no grupo de apoio e pode esclarecer dúvidas rapidamente com especialistas.</div>
-                <div class="faqitem"><strong>Inclui opções para restrições?</strong><br>Inclui! Sem sal para menores de 1 ano, sugestões para intolerantes e dicas de substituição.</div>
+                <div class="faqitem">
+                    <strong>Serve para bebês de todas as idades?</strong><br>Sim — dividido por fases (6-12 meses, 12-24 meses, +24 meses), fácil adaptar para crianças e até para família inteira.
+                </div>
+                <div class="faqitem">
+                    <strong>Funciona mesmo se não souber cozinhar?</strong><br>Sim — receitas e lista de compras fáceis, ingredientes simples, preparo direto ao ponto.
+                </div>
+                <div class="faqitem">
+                    <strong>Tem suporte?</strong><br>Sim — você entra no grupo de apoio e pode esclarecer dúvidas rapidamente com especialistas.
+                </div>
+                <div class="faqitem">
+                    <strong>Inclui opções para restrições?</strong><br>Inclui! Sem sal para menores de 1 ano, sugestões para intolerantes e dicas de substituição.
+                </div>
             </div>
         </section>
 
@@ -191,7 +346,6 @@
         <a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a> |
         <a href="termos-de-servico.html" target="_blank">Termos de Serviço</a>
     </footer>
-    <!-- Google Ads Conversion Tracking -->
     <script>
       gtag('event', 'conversion', {
         'send_to': 'AW-17418501891/DhM3CLqgnrsbEIP-5PFA',
